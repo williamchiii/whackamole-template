@@ -1,6 +1,7 @@
 import pygame
 
-#added a comment
+def draw_grid():
+    pass
 def main():
     try:
         pygame.init()
@@ -15,6 +16,13 @@ def main():
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill("light green")
+            #Draw Y Axis Lines Beginning
+            draw_y = 512 // 32
+            x = 0
+            for i in range(draw_y):
+                x += 32
+                pygame.draw.line(screen, 'black', (0, x), (640, x))
+            #Draw Y Axis Lines End
             pygame.display.flip()
             clock.tick(60)
     finally:
